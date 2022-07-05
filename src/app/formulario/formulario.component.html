@@ -34,7 +34,7 @@
 </div> -->
 
 
-<!-- Si es valido: 
+<!-- Si es valido:
 Class en input : is-valid
 y habilitar el div de feedback
 Si es invalido
@@ -45,17 +45,17 @@ Class en input is-invalid
   <form class="row g-3" [formGroup]="formulario" (ngSubmit)="submit($event)">
     <div class="col-md-4">
       <label for="validationServer01" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="validationServer01" required formControlName="nombre">
+      <input type="text" class="form-control" id=" validationServer01" formControlName="nombre">
       <!-- <div class="valid-feedback">
         Looks good!
-      </div> -->
-      <!-- <div class="invalid-feedback">
+      </div>-->
+      <div class="invalid-feedback" *ngIf="formulario.get('nombre').invalid">
         Error
-      </div> -->
+      </div>
     </div>
     <div class="col-md-4">
       <label for="validationServer02" class="form-label">Apellido</label>
-      <input type="text" class="form-control" id="validationServer02" required formControlName="apellido">
+      <input type="text" class="form-control" id="validationServer02" formControlName="apellido">
       <!-- <div class="valid-feedback">
         Looks good!
       </div> -->
@@ -65,7 +65,7 @@ Class en input is-invalid
       <div class="input-group has-validation">
         <span class="input-group-text" id="inputGroupPrepend3">@</span>
         <input type="text" class="form-control" id="validationServerUsername"
-          aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required formControlName="usuario">
+          aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" formControlName="usuario">
         <!-- <div class="valid-feedback">
                   Looks good!
                 </div> -->
