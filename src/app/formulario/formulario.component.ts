@@ -29,7 +29,7 @@ export class FormularioComponent implements OnInit {
       'apellido': new FormControl(null, [Validators.required, Validators.pattern('[-_a-zA-Z]*')]),
       'usuario': new FormControl(null, Validators.required),
       'email': new FormControl(null, [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
-      'dni': new FormControl(null, [Validators.required, Validators.maxLength(8)]),
+      'dni': new FormControl(null, [Validators.required, Validators.maxLength(8),Validators.minLength(7)]),
       'condiciones': new FormControl(null, Validators.required),
     })
   }
