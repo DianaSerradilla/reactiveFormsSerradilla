@@ -25,17 +25,19 @@ export class FormularioComponent implements OnInit {
 
 
     this.formulario = new FormGroup({
-      'nombre': new FormControl(null, [Validators.required, Validators.pattern('[-_a-zA-Z]*')]),
-      'apellido': new FormControl(null, [Validators.required, Validators.pattern('[-_a-zA-Z]*')]),
+      'nombre': new FormControl(null, [Validators.required, Validators.pattern('[-_a-zA-Z]*'),Validators.minLength(2)]),
+      'apellido': new FormControl(null, [Validators.required, Validators.pattern('[-_a-zA-Z]*'),Validators.minLength(2)]),
       'usuario': new FormControl(null, Validators.required),
       'email': new FormControl(null, [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
-      'dni': new FormControl(null, [Validators.required, Validators.maxLength(8),Validators.minLength(7)]),
+      'dni': new FormControl(null, [Validators.required, Validators.min(1000000), Validators.max(99999999)]),
       'condiciones': new FormControl(null, Validators.required),
     })
   }
 
-  submit(valorFormulario: any) {
-    console.log(this.formulario.value);
-    console.log(this.formulario.get('nombre')?.errors?.['required']);
+  submit(valorFormulario : any) {
+    console.log('formulario enviado')
+    
   }
+
+
 }
